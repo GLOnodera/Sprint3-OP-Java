@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${habito.id} ? 'Editar Hábito' : 'Novo Hábito'"></title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<!-- Inclui o cabeçalho -->
+<div th:replace="~{fragments/header :: header}"></div>
+
+<!-- Conteúdo Principal -->
+<div class="container mt-5">
+    <h1 th:text="${habito.id} ? 'Editar Hábito' : 'Novo Hábito'"></h1>
+    <form th:action="${habito.id} ? @{/habitos/editar/{id}(id=${habito.id})} : @{/habitos/salvar}" method="post">
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <input type="text" class="form-control" id="descricao" name="descricao" th:value="${habito.descricao}" required>
+        </div>
+        <div class="mb-3">
+            <label for="data" class="form-label">Data</label>
+            <input type="date" class="form-control" id="data" name="data" th:value="${habito.data}" required>
+        </div>
+        <div class="mb-3">
+            <label for="pontosGerados" class="form-label">Pontos Gerados</label>
+            <input type="number" class="form-control" id="pontosGerados" name="pontosGerados" th:value="${habito.pontosGerados}" required>
+        </div>
+        <div class="mb-3">
+            <label for="userId" class="form-label">Usuário</label>
+            <select class="form-control" id="userId" name="userId" required>
+                <option th:each="usuario : ${usuarios}"
+                        th:value="${usuario.id}"
+                        th:text="${usuario.nome}"
+                        th:selected="${habito.user != null && habito.user.id == usuario.id}">
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a th:href="@{/habitos}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+<!-- Inclui o rodapé -->
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
