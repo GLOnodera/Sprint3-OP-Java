@@ -89,3 +89,8 @@ POST	  /marketplace/comprar 	   Realiza a compra de um item.
 Gabriel Artacho: RM553527
 Gabriel Leal: RM553779
 Átila Rebolo: RM552650
+
+## 🤳 Diagrama
+
+![image](https://github.com/user-attachments/assets/06baf8f1-e93d-4b54-bb62-ec8b87ccbe62)
+
