@@ -93,4 +93,6 @@ Gabriel Leal: RM553779
 ## 🤳 Diagrama
 
 ![image](https://github.com/user-attachments/assets/06baf8f1-e93d-4b54-bb62-ec8b87ccbe62)
+![image](https://github.com/user-attachments/assets/c29b31fd-fe76-4549-b6d8-1ff1e57f88d8)
+
 
